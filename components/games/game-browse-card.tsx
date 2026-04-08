@@ -11,12 +11,16 @@ export function GameBrowseCard({ item }: GameBrowseCardProps) {
   return (
     <article className="interactive-card gold-trim section-shell flex h-full flex-col rounded-[1.8rem] p-6 [--trim-left:82%] [--trim-top:70%]">
       {item.thumbnailSrc ? (
-        <div className="relative mb-6 aspect-[16/10] overflow-hidden rounded-[1.25rem] border border-border bg-[#090704]">
+        <div
+          className={`relative mb-6 overflow-hidden rounded-[1.25rem] border border-border bg-[#090704] ${
+            item.thumbnailFit === "contain" ? "aspect-[3/2]" : "aspect-[16/10]"
+          }`}
+        >
           <Image
             src={item.thumbnailSrc}
             alt={item.thumbnailAlt ?? `${item.title} thumbnail`}
             fill
-            className="object-cover"
+            className={item.thumbnailFit === "contain" ? "object-contain" : "object-cover"}
             sizes="(max-width: 1280px) 100vw, 360px"
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,5,3,0.02),rgba(7,5,3,0.28))]" />

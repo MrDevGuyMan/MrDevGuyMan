@@ -63,12 +63,16 @@ export function SectionPreview({
               </div>
               <div className="flex flex-col gap-6 md:items-end md:text-right">
                 {item.thumbnailSrc ? (
-                  <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[1.2rem] border border-line bg-[#090704] md:max-w-[220px]">
+                  <div
+                    className={`relative w-full overflow-hidden rounded-[1.2rem] border border-line bg-[#090704] md:max-w-[220px] ${
+                      item.thumbnailFit === "contain" ? "aspect-[3/2]" : "aspect-[16/10]"
+                    }`}
+                  >
                     <Image
                       src={item.thumbnailSrc}
                       alt={item.thumbnailAlt ?? `${item.title} thumbnail`}
                       fill
-                      className="object-cover"
+                      className={item.thumbnailFit === "contain" ? "object-contain" : "object-cover"}
                       sizes="(max-width: 768px) 100vw, 220px"
                     />
                     <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,5,3,0.02),rgba(7,5,3,0.28))]" />

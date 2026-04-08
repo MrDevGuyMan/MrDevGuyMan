@@ -35,12 +35,16 @@ export function FeaturedGrid({ items }: FeaturedGridProps) {
                 {lead.description}
               </p>
               {lead.thumbnailSrc ? (
-                <div className="relative mt-8 aspect-[16/10] overflow-hidden rounded-[1.5rem] border border-line bg-[#090704]">
+                <div
+                  className={`relative mt-8 overflow-hidden rounded-[1.5rem] border border-line bg-[#090704] ${
+                    lead.thumbnailFit === "contain" ? "aspect-[3/2]" : "aspect-[16/10]"
+                  }`}
+                >
                   <Image
                     src={lead.thumbnailSrc}
                     alt={lead.thumbnailAlt ?? `${lead.title} thumbnail`}
                     fill
-                    className="object-cover"
+                    className={lead.thumbnailFit === "contain" ? "object-contain" : "object-cover"}
                     sizes="(max-width: 1024px) 100vw, 720px"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,5,3,0.02),rgba(7,5,3,0.28))]" />
@@ -69,6 +73,22 @@ export function FeaturedGrid({ items }: FeaturedGridProps) {
                   <p className="mt-3 max-w-xl text-[0.98rem] leading-7 text-ink-200">
                     {item.description}
                   </p>
+                  {item.thumbnailSrc ? (
+                    <div
+                      className={`relative mt-5 overflow-hidden rounded-[1.25rem] border border-line bg-[#090704] ${
+                        item.thumbnailFit === "contain" ? "aspect-[3/2]" : "aspect-[16/9]"
+                      }`}
+                    >
+                      <Image
+                        src={item.thumbnailSrc}
+                        alt={item.thumbnailAlt ?? `${item.title} thumbnail`}
+                        fill
+                        className={item.thumbnailFit === "contain" ? "object-contain" : "object-cover"}
+                        sizes="(max-width: 1024px) 100vw, 520px"
+                      />
+                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,5,3,0.02),rgba(7,5,3,0.28))]" />
+                    </div>
+                  ) : null}
                 </div>
                 <div className="mt-6 border-t border-line pt-3">
                   <span className="inline-flex items-center gap-3 text-sm font-semibold tracking-[0.01em] text-gold-300 transition-opacity group-hover:opacity-75">

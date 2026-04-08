@@ -34,12 +34,16 @@ export function LatestUpdates({ items }: LatestUpdatesProps) {
             </div>
             <div>
               {item.thumbnailSrc ? (
-                <div className="relative mb-5 aspect-[16/9] w-full max-w-xl overflow-hidden rounded-[1.25rem] border border-white/10 bg-[#090704]">
+                <div
+                  className={`relative mb-5 w-full max-w-xl overflow-hidden rounded-[1.25rem] border border-white/10 bg-[#090704] ${
+                    item.thumbnailFit === "contain" ? "aspect-[3/2]" : "aspect-[16/9]"
+                  }`}
+                >
                   <Image
                     src={item.thumbnailSrc}
                     alt={item.thumbnailAlt ?? `${item.title} thumbnail`}
                     fill
-                    className="object-cover"
+                    className={item.thumbnailFit === "contain" ? "object-contain" : "object-cover"}
                     sizes="(max-width: 1280px) 100vw, 640px"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,5,3,0.02),rgba(7,5,3,0.3))]" />

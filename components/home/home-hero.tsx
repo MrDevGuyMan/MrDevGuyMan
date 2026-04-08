@@ -40,12 +40,16 @@ export function HomeHero({ items }: HomeHeroProps) {
 
         <div className="gold-trim gold-trim-flat max-w-sm justify-self-start pl-5 pt-5 [--trim-left:80%] [--trim-top:68%] md:pl-6 md:pt-6 lg:justify-self-end">
           {spotlight.thumbnailSrc ? (
-            <div className="relative aspect-[16/10] overflow-hidden rounded-[1.35rem] border border-line bg-[#090704]">
+            <div
+              className={`relative overflow-hidden rounded-[1.35rem] border border-line bg-[#090704] ${
+                spotlight.thumbnailFit === "contain" ? "aspect-[3/2]" : "aspect-[16/10]"
+              }`}
+            >
               <Image
                 src={spotlight.thumbnailSrc}
                 alt={spotlight.thumbnailAlt ?? `${spotlight.title} thumbnail`}
                 fill
-                className="object-cover"
+                className={spotlight.thumbnailFit === "contain" ? "object-contain" : "object-cover"}
                 sizes="(max-width: 1024px) 100vw, 360px"
               />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,5,3,0.02),rgba(7,5,3,0.24))]" />

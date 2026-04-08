@@ -7,6 +7,7 @@ export type ProjectCardItem = {
   anchorId?: string;
   thumbnailSrc?: string;
   thumbnailAlt?: string;
+  thumbnailFit?: "cover" | "contain";
 };
 
 export type FeaturedShowcaseItem = {
@@ -18,6 +19,7 @@ export type FeaturedShowcaseItem = {
   eyebrow: string;
   thumbnailSrc?: string;
   thumbnailAlt?: string;
+  thumbnailFit?: "cover" | "contain";
 };
 
 export type LatestUpdateItem = {
@@ -29,6 +31,7 @@ export type LatestUpdateItem = {
   descriptionLinkLabel?: string;
   thumbnailSrc?: string;
   thumbnailAlt?: string;
+  thumbnailFit?: "cover" | "contain";
 };
 
 export type GameCatalogItem = {
@@ -41,6 +44,7 @@ export type GameCatalogItem = {
   summary: string;
   thumbnailSrc?: string;
   thumbnailAlt?: string;
+  thumbnailFit?: "cover" | "contain";
 };
 
 export type DevelopmentTrackItem = {
@@ -52,6 +56,9 @@ export type DevelopmentTrackItem = {
 const bubbleBashThumbnailSrc = "/games/bubble-bash/thumbnail.png";
 const bubbleBashThumbnailAlt =
   "BubbleBash thumbnail with orange and purple bubbles colliding behind the game logo.";
+const heightmapGeneratorThumbnailSrc = "/tools/heightmap-generator/thumbnail.png";
+const heightmapGeneratorThumbnailAlt =
+  "Heightmap Generator thumbnail showing snowy mountain peaks under a bright sky.";
 
 export const games: ProjectCardItem[] = [
   {
@@ -176,11 +183,14 @@ export const tools: ProjectCardItem[] = [
   {
     title: "Heightmap Generator",
     description:
-      "A terrain tool for sketching landforms in the browser, previewing them quickly, and exporting something useful.",
-    href: "/tools",
-    status: "Planned",
+      "A terrain tool for generating PNG files. Use in your browser, preview quickly, and export a useful heightmap for game development",
+    href: "/tools/heightmap-generator/index.html",
+    status: "Live",
     tags: ["Tooling", "Terrain", "Game Dev"],
     anchorId: "heightmap-generator",
+    thumbnailSrc: heightmapGeneratorThumbnailSrc,
+    thumbnailAlt: heightmapGeneratorThumbnailAlt,
+    thumbnailFit: "contain",
   },
   {
     title: "Utility Lab",
@@ -243,11 +253,14 @@ export const featuredShowcase: FeaturedShowcaseItem[] = [
   {
     title: "Heightmap Generator",
     description:
-      "A terrain tool for sketching landforms, poking at erosion shapes, and exporting something more useful than a screenshot.",
-    href: "/tools#heightmap-generator",
-    status: "Planned",
+      "A terrain tool for generating landforms, poking at erosion shapes, and exporting a heightmap useful for game development",
+    href: "/tools/heightmap-generator/index.html",
+    status: "Live",
     ctaLabel: "Open Heightmap Generator",
     eyebrow: "Featured tool",
+    thumbnailSrc: heightmapGeneratorThumbnailSrc,
+    thumbnailAlt: heightmapGeneratorThumbnailAlt,
+    thumbnailFit: "contain",
   },
   {
     title: "Random Experiment",
@@ -272,12 +285,15 @@ export const latestUpdates: LatestUpdateItem[] = [
     thumbnailAlt: bubbleBashThumbnailAlt,
   },
   {
-    title: "The tools section has a real job now",
+    title: "The heightmap generator is live in the tools section",
     description:
-      "Terrain and workflow helpers are the first clear direction there, instead of a generic bucket for utilities.",
-    href: "/tools",
+      "It now has a proper thumbnail, a direct route, and a clearer place on the site as the first real utility in the tools lineup.",
+    href: "/tools/heightmap-generator/index.html",
     section: "Tools",
-    timeLabel: "Direction set",
+    timeLabel: "Now live",
+    thumbnailSrc: heightmapGeneratorThumbnailSrc,
+    thumbnailAlt: heightmapGeneratorThumbnailAlt,
+    thumbnailFit: "contain",
   },
   {
     title: "Experiments stay loose on purpose",
