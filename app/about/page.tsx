@@ -17,9 +17,21 @@ export default function AboutPage() {
       />
       <section className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="gold-trim rounded-3xl border border-border bg-surface/70 p-6 text-sm leading-7 text-muted [--trim-left:82%] [--trim-top:68%]">
-          The goal is simple: make it easy for people to discover and use what
-          gets built here. That means clear navigation, strong page structure,
-          and room for both polished releases and works in progress.
+          <div className="space-y-4">
+            <p>
+              This started as a place to put my work, but it quickly turned
+              into something more.
+            </p>
+            <p>
+              I wanted a space where I could build, test ideas, and actually
+              use what I make &mdash; not just show it. Something that grows over
+              time instead of sitting as a finished portfolio.
+            </p>
+            <p>
+              The goal is simple: make it easy to explore, use, and come back
+              to what gets built here.
+            </p>
+          </div>
         </div>
         <div className="gold-trim rounded-3xl border border-border bg-surface/70 p-6 [--trim-left:82%] [--trim-top:68%]">
           <p className="text-sm font-medium uppercase tracking-[0.22em] text-accent">
@@ -45,9 +57,15 @@ export default function AboutPage() {
             href="https://theeoin.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-accent transition hover:text-foreground"
+            className="group block rounded-2xl border border-border/80 bg-background/30 p-5 transition hover:border-accent/50 hover:bg-background/50"
           >
-            theeoin.com
+            <p className="text-base font-semibold text-foreground transition group-hover:text-accent">
+              theeoin.com
+            </p>
+            <p className="mt-2 max-w-2xl text-sm leading-7 text-muted">
+              Forward-focused development work &mdash; AI systems, shipped
+              games, and interactive web projects.
+            </p>
           </a>
         </div>
       </section>
