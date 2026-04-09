@@ -72,7 +72,7 @@ export function HeaderNav({ items }: HeaderNavProps) {
         : pathname === item.href || pathname.startsWith(`${item.href}/`);
     const className =
       mode === "desktop"
-        ? `text-[0.92rem] font-medium tracking-[-0.01em] transition-colors ${
+        ? `whitespace-nowrap text-[0.86rem] font-medium tracking-[-0.01em] transition-colors lg:text-[0.92rem] ${
             isActive ? "text-gold-100" : "text-ink-400 hover:text-gold-300"
           }`
         : `rounded-xl border px-4 py-3 text-sm font-medium tracking-[-0.01em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-300/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#080705] ${
@@ -99,7 +99,7 @@ export function HeaderNav({ items }: HeaderNavProps) {
 
   return (
     <nav ref={navRef} aria-label="Primary navigation" className="relative flex shrink-0 items-center">
-      <div className="hidden items-center gap-5 md:flex md:gap-6">
+      <div className="hidden items-center gap-4 md:flex xl:gap-6">
         {items.map((item) => renderNavItem(item, "desktop"))}
       </div>
       <button

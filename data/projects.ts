@@ -312,4 +312,6 @@ export const surpriseDestinations = [
   "/experiments",
   "/support",
   "/about",
+  "/useful-tools",
+  "/useful-tools/elevenlabs",
 ];
