@@ -32,6 +32,25 @@ export default function AboutPage() {
           </ul>
         </div>
       </section>
+
+      <section className="gold-trim rounded-3xl border border-border bg-surface/70 p-6 [--trim-left:82%] [--trim-top:68%]">
+        <h2 className="text-2xl font-semibold tracking-[-0.03em] text-foreground">
+          Supporting Other Developers
+        </h2>
+        <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
+          A few developers and projects worth checking out.
+        </p>
+        <div className="mt-5">
+          <a
+            href="https://theeoin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-accent transition hover:text-foreground"
+          >
+            theeoin.com
+          </a>
+        </div>
+      </section>
     </Container>
   );
 }
