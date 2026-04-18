@@ -56,11 +56,35 @@ export type DevelopmentTrackItem = {
 const bubbleBashThumbnailSrc = "/games/bubble-bash/thumbnail.png";
 const bubbleBashThumbnailAlt =
   "BubbleBash thumbnail with orange and purple bubbles colliding behind the game logo.";
+const missileStrikeThumbnailSrc = "/games/missile-strike/missile_strike_thumbnail.png";
+const missileStrikeThumbnailAlt =
+  "Missile Strike thumbnail showing a missile launch scene for the arcade game.";
 const heightmapGeneratorThumbnailSrc = "/tools/heightmap-generator/thumbnail.png";
 const heightmapGeneratorThumbnailAlt =
   "Heightmap Generator thumbnail showing snowy mountain peaks under a bright sky.";
 
 export const games: ProjectCardItem[] = [
+  {
+    title: "BubbleBash",
+    description:
+      "A Godot browser game built around fast rounds, clean replay loops, and eating your way past rival bubbles.",
+    href: "/games/bubble-bash",
+    status: "Playable",
+    tags: ["Godot", "Browser Game", "Arcade"],
+    thumbnailSrc: bubbleBashThumbnailSrc,
+    thumbnailAlt: bubbleBashThumbnailAlt,
+  },
+  {
+    title: "Missile Strike",
+    description:
+      "A browser-playable arcade game about timing shots, surviving pressure, and landing clean strikes.",
+    href: "/games/missile-strike",
+    status: "Playable",
+    tags: ["Godot", "Browser Game", "Arcade"],
+    thumbnailSrc: missileStrikeThumbnailSrc,
+    thumbnailAlt: missileStrikeThumbnailAlt,
+    thumbnailFit: "contain",
+  },
   {
     title: "Arena Zero",
     description:
@@ -68,22 +92,6 @@ export const games: ProjectCardItem[] = [
     href: "/games/arena-zero",
     status: "Prototype",
     tags: ["Arena", "Combat", "Prototype"],
-  },
-  {
-    title: "Road Rage Crash",
-    description:
-      "A small arcade racer prototype focused on tight handling, short tracks, and shaving seconds off each lap.",
-    href: "/games/racing-game",
-    status: "Prototype",
-    tags: ["Racing", "Arcade", "Web"],
-  },
-  {
-    title: "Temple Run-style Game",
-    description:
-      "An endless runner idea built around momentum, readable hazards, and one-more-run scoring.",
-    href: "/games/temple-run-style-game",
-    status: "Prototype",
-    tags: ["Runner", "Arcade", "Score Chase"],
   },
 ];
 
@@ -93,13 +101,27 @@ export const gameCatalog: GameCatalogItem[] = [
     description:
       "The main game on the site right now: a Godot browser project built around fast rounds and clean replay loops.",
     href: "/games/bubble-bash",
-    status: "In Progress",
+    status: "Playable",
     tags: ["Godot", "Browser Game", "Featured"],
     ctaLabel: "Play BubbleBash",
     summary:
       "BubbleBash is fun and exciting. Play now and grow your bubble by eating food and other AI bubbles who are out for your life. Beware the spikes!",
     thumbnailSrc: bubbleBashThumbnailSrc,
     thumbnailAlt: bubbleBashThumbnailAlt,
+  },
+  {
+    title: "Missile Strike",
+    description:
+      "A browser-playable Godot arcade game about timing shots, surviving pressure, and landing clean strikes.",
+    href: "/games/missile-strike",
+    status: "Playable",
+    tags: ["Godot", "Browser Game", "Arcade"],
+    ctaLabel: "Play Missile Strike",
+    summary:
+      "Missile Strike is a fast browser arcade game built for quick launches, sharp reactions, and satisfying hits.",
+    thumbnailSrc: missileStrikeThumbnailSrc,
+    thumbnailAlt: missileStrikeThumbnailAlt,
+    thumbnailFit: "contain",
   },
   {
     title: "Road Rage Crash",
@@ -240,15 +262,15 @@ export const experiments: ProjectCardItem[] = [
 
 export const featuredShowcase: FeaturedShowcaseItem[] = [
   {
-    title: "BubbleBash",
+    title: "Missile Strike",
     description:
-      "A Godot browser game, tuned around short arcade rounds and playable right here in your browser!",
-    href: "/games/bubble-bash",
-    status: "In Progress",
-    ctaLabel: "Play BubbleBash",
+      "A Godot browser game built around quick launches, sharp reactions, and playable arcade action.",
+    href: "/games/missile-strike",
+    status: "Playable",
+    ctaLabel: "Play Missile Strike",
     eyebrow: "Featured game",
-    thumbnailSrc: bubbleBashThumbnailSrc,
-    thumbnailAlt: bubbleBashThumbnailAlt,
+    thumbnailSrc: missileStrikeThumbnailSrc,
+    thumbnailAlt: missileStrikeThumbnailAlt,
   },
   {
     title: "Heightmap Generator",
@@ -275,14 +297,15 @@ export const featuredShowcase: FeaturedShowcaseItem[] = [
 
 export const latestUpdates: LatestUpdateItem[] = [
   {
-    title: "BubbleBash is now live and ready to play!",
+    title: "Missile Strike is now live and ready to play!",
     description: "",
-    href: "/games/bubble-bash",
+    href: "/games/missile-strike",
     section: "Games",
     timeLabel: "Current focus",
     descriptionLinkLabel: "Click here to play now!",
-    thumbnailSrc: bubbleBashThumbnailSrc,
-    thumbnailAlt: bubbleBashThumbnailAlt,
+    thumbnailSrc: missileStrikeThumbnailSrc,
+    thumbnailAlt: missileStrikeThumbnailAlt,
+    thumbnailFit: "contain",
   },
   {
     title: "The heightmap generator is live in the tools section",
@@ -307,11 +330,11 @@ export const latestUpdates: LatestUpdateItem[] = [
 
 export const surpriseDestinations = [
   "/games",
+  "/games/missile-strike",
   "/games/bubble-bash",
   "/tools",
   "/experiments",
   "/support",
   "/about",
   "/useful-tools",
-  "/useful-tools/elevenlabs",
 ];

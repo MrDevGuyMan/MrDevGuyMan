@@ -9,7 +9,8 @@ import { SurpriseMeLink } from "@/components/ui/surprise-me-link";
 import { gameCatalog, gameDevelopmentTracks } from "@/data/projects";
 
 export default function GamesPage() {
-  const featuredGame = gameCatalog[0];
+  const featuredGame =
+    gameCatalog.find((game) => game.title === "Missile Strike") ?? gameCatalog[0];
 
   if (!featuredGame) {
     return null;
@@ -20,7 +21,7 @@ export default function GamesPage() {
       <PageHero
         eyebrow="Games"
         title="A browser arcade shelf built for replayable projects and future launches."
-        description="This is the games side of the hub: a place for playable releases, prototype lanes, and browser-first arcade ideas. BubbleBash leads the lineup now, with more projects ready to slot in behind it."
+        description="This is the games side of the hub: a place for playable releases, prototype lanes, and browser-first arcade ideas. Missile Strike leads the lineup now, with more projects ready to slot in behind it."
       >
         <div className="flex flex-wrap gap-2">
           <span className="surface-tag rounded-full px-3 py-1.5 text-[11px] uppercase tracking-[0.18em]">
@@ -39,8 +40,8 @@ export default function GamesPage() {
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(236,198,160,0.46),transparent)]" />
         <SectionHeading
           eyebrow="Featured now"
-          title="BubbleBash is the lead arcade destination."
-          description="Play BubbleBash free in your browser right now!"
+          title="Missile Strike is the lead arcade destination."
+          description="Play Missile Strike free in your browser right now!"
         />
         <div className="mt-8 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <article className="gold-trim glass-panel-strong rounded-[1.8rem] p-7 [--trim-left:82%] [--trim-top:68%]">
@@ -53,12 +54,16 @@ export default function GamesPage() {
               </div>
             </div>
             {featuredGame.thumbnailSrc ? (
-              <div className="relative mt-6 aspect-[16/9] overflow-hidden rounded-[1.5rem] border border-border bg-[#090704]">
+              <div
+                className={`relative mt-6 overflow-hidden rounded-[1.5rem] border border-border bg-[#090704] ${
+                  featuredGame.thumbnailFit === "contain" ? "aspect-[3/2]" : "aspect-[16/9]"
+                }`}
+              >
                 <Image
                   src={featuredGame.thumbnailSrc}
                   alt={featuredGame.thumbnailAlt ?? `${featuredGame.title} thumbnail`}
                   fill
-                  className="object-cover"
+                  className={featuredGame.thumbnailFit === "contain" ? "object-contain" : "object-cover"}
                   sizes="(max-width: 1024px) 100vw, 760px"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,5,3,0.02),rgba(7,5,3,0.32))]" />
@@ -88,7 +93,7 @@ export default function GamesPage() {
             <div className="gold-trim section-shell rounded-[1.6rem] p-6 [--trim-left:78%] [--trim-top:64%]">
               <p className="eyebrow-label text-[11px]">About</p>
               <p className="mt-3 text-lg font-semibold tracking-[-0.03em] text-foreground">
-                BubbleBash is a browser based game made in the Godot engine and here, free to play for your arcade gaming experience.
+                Missile Strike is a browser based game made in the Godot engine and here, free to play for your arcade gaming experience.
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
@@ -109,7 +114,7 @@ export default function GamesPage() {
         <SectionHeading
           eyebrow="Browse games"
           title="Current leads, prototype lanes, and future playable routes."
-          description="These cards are meant to feel like an arcade browse surface, with BubbleBash up front and room for multiple game directions to mature over time."
+          description="These cards are meant to feel like an arcade browse surface, with Missile Strike up front and room for multiple game directions to mature over time."
         />
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {gameCatalog.map((item) => (
