@@ -6,6 +6,8 @@ import { PageHero } from "@/components/ui/page-hero";
 
 const gamePath = "/games/missile-strike/index.html";
 const thumbnailPath = "/games/missile-strike/missile_strike_thumbnail.png";
+const missileStrikeDescription =
+  "Missile Strike is a fast paced arcade game. Defend your city from the constant bombardment of incoming missiles and save your people from disaster!";
 
 export default function MissileStrikePage() {
   return (
@@ -13,7 +15,7 @@ export default function MissileStrikePage() {
       <PageHero
         eyebrow="Featured Game"
         title="Missile Strike"
-        description="Missile Strike is live on the site. Launch the browser build below and play in a new tab."
+        description={missileStrikeDescription}
       >
         <div className="flex flex-wrap gap-3">
           <a href={gamePath} target="_blank" className="btn-primary">

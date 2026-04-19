@@ -56,9 +56,13 @@ export type DevelopmentTrackItem = {
 const bubbleBashThumbnailSrc = "/games/bubble-bash/thumbnail.png";
 const bubbleBashThumbnailAlt =
   "BubbleBash thumbnail with orange and purple bubbles colliding behind the game logo.";
+const bubbleBashDescription =
+  "BubbleBash is a survival-style arena game. Grow in size by consuming everything smaller than you and avoid the larger bubbles hunting you down. It’s simple to pick up, but quickly turns into a tense, strategic fight for dominance where every move matters and one mistake can cost everything.";
 const missileStrikeThumbnailSrc = "/games/missile-strike/missile_strike_thumbnail.png";
 const missileStrikeThumbnailAlt =
   "Missile Strike thumbnail showing a missile launch scene for the arcade game.";
+const missileStrikeDescription =
+  "Missile Strike is a fast paced arcade game. Defend your city from the constant bombardment of incoming missiles and save your people from disaster!";
 const heightmapGeneratorThumbnailSrc = "/tools/heightmap-generator/thumbnail.png";
 const heightmapGeneratorThumbnailAlt =
   "Heightmap Generator thumbnail showing snowy mountain peaks under a bright sky.";
@@ -66,8 +70,7 @@ const heightmapGeneratorThumbnailAlt =
 export const games: ProjectCardItem[] = [
   {
     title: "BubbleBash",
-    description:
-      "A Godot browser game built around fast rounds, clean replay loops, and eating your way past rival bubbles.",
+    description: bubbleBashDescription,
     href: "/games/bubble-bash",
     status: "Playable",
     tags: ["Godot", "Browser Game", "Arcade"],
@@ -76,8 +79,7 @@ export const games: ProjectCardItem[] = [
   },
   {
     title: "Missile Strike",
-    description:
-      "A browser-playable arcade game about timing shots, surviving pressure, and landing clean strikes.",
+    description: missileStrikeDescription,
     href: "/games/missile-strike",
     status: "Playable",
     tags: ["Godot", "Browser Game", "Arcade"],
@@ -98,27 +100,23 @@ export const games: ProjectCardItem[] = [
 export const gameCatalog: GameCatalogItem[] = [
   {
     title: "BubbleBash",
-    description:
-      "The main game on the site right now: a Godot browser project built around fast rounds and clean replay loops.",
+    description: bubbleBashDescription,
     href: "/games/bubble-bash",
     status: "Playable",
     tags: ["Godot", "Browser Game", "Featured"],
     ctaLabel: "Play BubbleBash",
-    summary:
-      "BubbleBash is fun and exciting. Play now and grow your bubble by eating food and other AI bubbles who are out for your life. Beware the spikes!",
+    summary: bubbleBashDescription,
     thumbnailSrc: bubbleBashThumbnailSrc,
     thumbnailAlt: bubbleBashThumbnailAlt,
   },
   {
     title: "Missile Strike",
-    description:
-      "A browser-playable Godot arcade game about timing shots, surviving pressure, and landing clean strikes.",
+    description: missileStrikeDescription,
     href: "/games/missile-strike",
     status: "Playable",
     tags: ["Godot", "Browser Game", "Arcade"],
     ctaLabel: "Play Missile Strike",
-    summary:
-      "Missile Strike is a fast browser arcade game built for quick launches, sharp reactions, and satisfying hits.",
+    summary: missileStrikeDescription,
     thumbnailSrc: missileStrikeThumbnailSrc,
     thumbnailAlt: missileStrikeThumbnailAlt,
     thumbnailFit: "contain",
@@ -263,8 +261,7 @@ export const experiments: ProjectCardItem[] = [
 export const featuredShowcase: FeaturedShowcaseItem[] = [
   {
     title: "Missile Strike",
-    description:
-      "A Godot browser game built around quick launches, sharp reactions, and playable arcade action.",
+    description: missileStrikeDescription,
     href: "/games/missile-strike",
     status: "Playable",
     ctaLabel: "Play Missile Strike",

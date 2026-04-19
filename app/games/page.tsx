@@ -8,6 +8,9 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { SurpriseMeLink } from "@/components/ui/surprise-me-link";
 import { gameCatalog, gameDevelopmentTracks } from "@/data/projects";
 
+const missileStrikeDescription =
+  "Made in the Godot engine Missile Strike is fun, exciting and free to play right here in your browser.";
+
 export default function GamesPage() {
   const featuredGame =
     gameCatalog.find((game) => game.title === "Missile Strike") ?? gameCatalog[0];
@@ -93,7 +96,7 @@ export default function GamesPage() {
             <div className="gold-trim section-shell rounded-[1.6rem] p-6 [--trim-left:78%] [--trim-top:64%]">
               <p className="eyebrow-label text-[11px]">About</p>
               <p className="mt-3 text-lg font-semibold tracking-[-0.03em] text-foreground">
-                Missile Strike is a browser based game made in the Godot engine and here, free to play for your arcade gaming experience.
+                {missileStrikeDescription}
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">

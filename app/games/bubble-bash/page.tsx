@@ -6,6 +6,8 @@ import { PageHero } from "@/components/ui/page-hero";
 
 const gamePath = "/games/bubble-bash/index.html";
 const thumbnailPath = "/games/bubble-bash/thumbnail.png";
+const bubbleBashDescription =
+  "BubbleBash is a survival-style arena game. Grow in size by consuming everything smaller than you and avoid the larger bubbles hunting you down. It’s simple to pick up, but quickly turns into a tense, strategic fight for dominance where every move matters and one mistake can cost everything.";
 
 export default function BubbleBashPage() {
   return (
@@ -13,7 +15,7 @@ export default function BubbleBashPage() {
       <PageHero
         eyebrow="Featured Game"
         title="BubbleBash"
-        description="BubbleBash is now live on the site, click the link below to launch the game."
+        description={bubbleBashDescription}
       >
         <div className="flex flex-wrap gap-3">
           <a href={gamePath} target="_blank" className="btn-primary">
