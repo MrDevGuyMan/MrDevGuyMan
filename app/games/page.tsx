@@ -8,12 +8,12 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { SurpriseMeLink } from "@/components/ui/surprise-me-link";
 import { gameCatalog } from "@/data/projects";
 
-const missileStrikeDescription =
-  "Made in the Godot engine Missile Strike is fun, exciting and free to play right here in your browser.";
+const warOfRealmsFeaturedDescription =
+  "Made in the Godot engine War of Realms is a fantasy grand-strategy conquest game you can play right here in your browser.";
 
 export default function GamesPage() {
   const featuredGame =
-    gameCatalog.find((game) => game.title === "Missile Strike") ?? gameCatalog[0];
+    gameCatalog.find((game) => game.title === "War of Realms") ?? gameCatalog[0];
 
   if (!featuredGame) {
     return null;
@@ -24,7 +24,7 @@ export default function GamesPage() {
       <PageHero
         eyebrow="Games"
         title="A browser arcade shelf built for replayable projects and future launches."
-        description="This is the games side of the hub: a place for playable releases, prototype lanes, and browser-first arcade ideas. Missile Strike leads the lineup now, with more projects ready to slot in behind it."
+        description="This is the games side of the hub: a place for playable releases, prototype lanes, and browser-first arcade ideas. War of Realms leads the lineup now, with more projects ready to slot in behind it."
       >
         <div className="flex flex-wrap gap-2">
           <span className="surface-tag rounded-full px-3 py-1.5 text-[11px] uppercase tracking-[0.18em]">
@@ -43,8 +43,8 @@ export default function GamesPage() {
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(236,198,160,0.46),transparent)]" />
         <SectionHeading
           eyebrow="Featured now"
-          title="Missile Strike is the lead arcade destination."
-          description="Play Missile Strike free in your browser right now!"
+          title="War of Realms is the lead strategy destination."
+          description="Play War of Realms free in your browser right now!"
         />
         <div className="mt-8 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <article className="gold-trim glass-panel-strong rounded-[1.8rem] p-7 [--trim-left:82%] [--trim-top:68%]">
@@ -96,7 +96,7 @@ export default function GamesPage() {
             <div className="gold-trim section-shell rounded-[1.6rem] p-6 [--trim-left:78%] [--trim-top:64%]">
               <p className="eyebrow-label text-[11px]">About</p>
               <p className="mt-3 text-lg font-semibold tracking-[-0.03em] text-foreground">
-                {missileStrikeDescription}
+                {warOfRealmsFeaturedDescription}
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">

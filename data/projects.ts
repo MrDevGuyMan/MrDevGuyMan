@@ -63,6 +63,12 @@ const missileStrikeThumbnailAlt =
   "Missile Strike thumbnail showing a missile launch scene for the arcade game.";
 const missileStrikeDescription =
   "Missile Strike is a fast paced arcade game. Defend your city from the constant bombardment of incoming missiles and save your people from disaster!";
+const warOfRealmsThumbnailSrc =
+  "/games/war-of-realms/war_of_realms_thumbnail.png";
+const warOfRealmsThumbnailAlt =
+  "War of Realms thumbnail showing the fantasy strategy game artwork.";
+const warOfRealmsDescription =
+  "A fantasy grand-strategy conquest game where players command factions, claim territories, and battle for control of the realms.";
 const heightmapGeneratorThumbnailSrc = "/tools/heightmap-generator/thumbnail.png";
 const heightmapGeneratorThumbnailAlt =
   "Heightmap Generator thumbnail showing snowy mountain peaks under a bright sky.";
@@ -88,6 +94,15 @@ export const games: ProjectCardItem[] = [
     thumbnailFit: "contain",
   },
   {
+    title: "War of Realms",
+    description: warOfRealmsDescription,
+    href: "/games/war-of-realms",
+    status: "Playable",
+    tags: ["Godot", "Strategy", "Web Game", "Fantasy"],
+    thumbnailSrc: warOfRealmsThumbnailSrc,
+    thumbnailAlt: warOfRealmsThumbnailAlt,
+  },
+  {
     title: "Arena Zero",
     description:
       "A compact combat prototype for quick rounds, enemy pattern tests, and upgrade ideas that might actually stick.",
@@ -103,7 +118,7 @@ export const gameCatalog: GameCatalogItem[] = [
     description: bubbleBashDescription,
     href: "/games/bubble-bash",
     status: "Playable",
-    tags: ["Godot", "Browser Game", "Featured"],
+    tags: ["Godot", "Browser Game", "Arcade", "Strategy"],
     ctaLabel: "Play BubbleBash",
     summary: bubbleBashDescription,
     thumbnailSrc: bubbleBashThumbnailSrc,
@@ -122,11 +137,22 @@ export const gameCatalog: GameCatalogItem[] = [
     thumbnailFit: "contain",
   },
   {
+    title: "War of Realms",
+    description: warOfRealmsDescription,
+    href: "/games/war-of-realms",
+    status: "Playable",
+    tags: ["Godot", "Strategy", "Web Game", "Fantasy"],
+    ctaLabel: "Play War of Realms",
+    summary: warOfRealmsDescription,
+    thumbnailSrc: warOfRealmsThumbnailSrc,
+    thumbnailAlt: warOfRealmsThumbnailAlt,
+  },
+  {
     title: "Road Rage Crash",
     description:
       "A future browser racer centered on responsive handling, short laps, and a clean arcade feel.",
     href: "/games/racing-game",
-    status: "Prototype",
+    status: "Concept",
     tags: ["Racing", "Arcade", "Browser"],
     ctaLabel: "View concept",
     summary:
@@ -137,7 +163,7 @@ export const gameCatalog: GameCatalogItem[] = [
     description:
       "An endless runner slot aimed at momentum, obstacle flow, and fast restart scoring.",
     href: "/games/temple-run-style-game",
-    status: "Prototype",
+    status: "Concept",
     tags: ["Runner", "Endless", "Score Chase"],
     ctaLabel: "View concept",
     summary:
@@ -159,7 +185,7 @@ export const gameCatalog: GameCatalogItem[] = [
     description:
       "A compact combat prototype for quick rounds, enemy pattern tests, and upgrade ideas that might actually stick.",
     href: "/games/arena-zero",
-    status: "In Progress",
+    status: "Concept",
     tags: ["Arena", "Combat", "Prototype"],
     ctaLabel: "Open placeholder",
     summary:
@@ -170,7 +196,7 @@ export const gameCatalog: GameCatalogItem[] = [
     description:
       "A run-based crawler idea mixing short loops, procedural rooms, and browser-friendly session length.",
     href: "/games/dungeon-loop",
-    status: "Prototype",
+    status: "Concept",
     tags: ["Dungeon", "Run-Based", "Adventure"],
     ctaLabel: "Open placeholder",
     summary:
@@ -232,14 +258,14 @@ export const tools: ProjectCardItem[] = [
 
 export const featuredShowcase: FeaturedShowcaseItem[] = [
   {
-    title: "Missile Strike",
-    description: missileStrikeDescription,
-    href: "/games/missile-strike",
+    title: "War of Realms",
+    description: warOfRealmsDescription,
+    href: "/games/war-of-realms",
     status: "Playable",
-    ctaLabel: "Play Missile Strike",
+    ctaLabel: "Play War of Realms",
     eyebrow: "Featured game",
-    thumbnailSrc: missileStrikeThumbnailSrc,
-    thumbnailAlt: missileStrikeThumbnailAlt,
+    thumbnailSrc: warOfRealmsThumbnailSrc,
+    thumbnailAlt: warOfRealmsThumbnailAlt,
   },
   {
     title: "Heightmap Generator",
@@ -256,6 +282,16 @@ export const featuredShowcase: FeaturedShowcaseItem[] = [
 ];
 
 export const latestUpdates: LatestUpdateItem[] = [
+  {
+    title: "War of Realms is now live and ready to play!",
+    description:
+      "The latest browser release is now featured across the site with its own game page, direct launch flow, and thumbnail preview.",
+    href: "/games/war-of-realms",
+    section: "Games",
+    timeLabel: "Now featured",
+    thumbnailSrc: warOfRealmsThumbnailSrc,
+    thumbnailAlt: warOfRealmsThumbnailAlt,
+  },
   {
     title: "Missile Strike is now live and ready to play!",
     description: "",
@@ -282,6 +318,7 @@ export const latestUpdates: LatestUpdateItem[] = [
 
 export const surpriseDestinations = [
   "/games",
+  "/games/war-of-realms",
   "/games/missile-strike",
   "/games/bubble-bash",
   "/tools",
