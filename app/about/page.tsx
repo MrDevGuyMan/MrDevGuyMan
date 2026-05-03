@@ -3,7 +3,7 @@ import { PageHero } from "@/components/ui/page-hero";
 
 const currentFocus = [
   "Building a clear home for projects that are meant to be explored, used, or played.",
-  "Starting with BubbleBash, then expanding into tools and experimental work.",
+  "Starting with BubbleBash, then expanding into more games and useful tools.",
   "Keeping the site clean and scalable so new projects can slot in without redesigning the foundation.",
 ];
 
@@ -13,7 +13,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About"
         title="A project hub built for making, shipping, and iterating."
-        description="This website is meant to function as a living hub for active work rather than a static resume. Over time it will collect games, dev tools, experiments, and other interactive projects in one cohesive place."
+        description="This website is meant to function as a living hub for active work rather than a static resume. Over time it will collect games, dev tools, and other interactive projects in one cohesive place."
       />
       <section className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="gold-trim rounded-3xl border border-border bg-surface/70 p-6 text-sm leading-7 text-muted [--trim-left:82%] [--trim-top:68%]">

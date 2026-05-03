@@ -4,7 +4,6 @@ import { LatestUpdates } from "@/components/home/latest-updates";
 import { SectionPreview } from "@/components/home/section-preview";
 import { Container } from "@/components/ui/container";
 import {
-  experiments,
   featuredShowcase,
   games,
   latestUpdates,
@@ -46,20 +45,6 @@ export default function HomePage() {
           />
         </Container>
       </section>
-
-      <section className="bg-variant-surface">
-        <Container>
-          <SectionPreview
-            eyebrow="Experiments"
-            title="Rendering tests, UI ideas, and smaller technical work."
-            description="This is the looser side of the site: mechanics, interaction tests, and visual experiments that may turn into proper projects later."
-            href="/experiments"
-            actionLabel="View all experiments"
-            items={experiments.slice(0, 3)}
-          />
-        </Container>
-      </section>
-
       <section className="bg-variant-grid">
         <Container className="pb-20 md:pb-32">
           <div className="pt-24 md:pt-32">

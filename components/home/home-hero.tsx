@@ -20,7 +20,7 @@ export function HomeHero({ items }: HomeHeroProps) {
             Games and tools with a sharper point of view.
           </h1>
           <p className="mt-8 max-w-2xl text-[1.08rem] leading-8 text-ink-200 md:text-[1.18rem] md:leading-9">
-            Here we publish playable games, practical tools, and smaller technical experiments.
+            Here we publish playable games and practical tools built to be explored, used, and replayed.
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Link href={spotlight.href} className="cta-primary border-gold-300 bg-gold-300 text-[#090806] shadow-none hover:bg-gold-100">

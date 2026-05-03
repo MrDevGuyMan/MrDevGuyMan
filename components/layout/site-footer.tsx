@@ -44,7 +44,6 @@ export function SiteFooter() {
           <p className="mb-2 text-base font-medium text-[#d7ccb5]">
             {new Date().getFullYear()} MrDevGuyMan Hub
           </p>
-          <p className="leading-7">Foundation live. BubbleBash first, then the rest.</p>
         </div>
       </Container>
     </footer>

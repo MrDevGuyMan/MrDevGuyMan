@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/container";
 import { PageHero } from "@/components/ui/page-hero";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { SurpriseMeLink } from "@/components/ui/surprise-me-link";
-import { gameCatalog, gameDevelopmentTracks } from "@/data/projects";
+import { gameCatalog } from "@/data/projects";
 
 const missileStrikeDescription =
   "Made in the Godot engine Missile Strike is fun, exciting and free to play right here in your browser.";
@@ -114,33 +114,10 @@ export default function GamesPage() {
       </section>
 
       <section className="section-divider space-y-8">
-        <SectionHeading
-          eyebrow="Browse games"
-          title="Current leads, prototype lanes, and future playable routes."
-          description="These cards are meant to feel like an arcade browse surface, with Missile Strike up front and room for multiple game directions to mature over time."
-        />
+        <SectionHeading eyebrow="Browse games" />
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {gameCatalog.map((item) => (
             <GameBrowseCard key={item.title} item={item} />
-          ))}
-        </div>
-      </section>
-
-      <section className="section-divider space-y-8">
-        <SectionHeading
-          eyebrow="In development"
-          title="More games are already accounted for."
-          description="The games area is built to stay active as new concepts move from idea to prototype to full playable release."
-        />
-        <div className="grid gap-4 lg:grid-cols-3">
-          {gameDevelopmentTracks.map((item) => (
-            <article key={item.title} className="interactive-card gold-trim section-shell rounded-[1.6rem] p-6 [--trim-left:80%] [--trim-top:66%]">
-              <p className="eyebrow-label text-[11px]">{item.status}</p>
-              <h2 className="mt-3 text-[1.5rem] font-semibold tracking-[-0.03em] text-foreground">
-                {item.title}
-              </h2>
-              <p className="mt-4 text-sm leading-7 text-muted">{item.description}</p>
-            </article>
           ))}
         </div>
       </section>

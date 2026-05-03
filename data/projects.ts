@@ -230,34 +230,6 @@ export const tools: ProjectCardItem[] = [
   },
 ];
 
-export const experiments: ProjectCardItem[] = [
-  {
-    title: "Interaction Sandbox",
-    description:
-      "Where I test UI bits, controls, and tiny mechanics before deciding whether they deserve a full project.",
-    href: "/experiments",
-    status: "Active concept",
-    tags: ["R&D", "Interaction", "Frontend"],
-  },
-  {
-    title: "Rendering Tests",
-    description:
-      "Small browser rendering tests for shaders, particles, animation, and performance weirdness.",
-    href: "/experiments",
-    status: "Planned",
-    tags: ["Graphics", "Performance", "Web"],
-  },
-  {
-    title: "Random Experiment",
-    description:
-      "A rotating slot for the odd ideas that do not fit anywhere else yet.",
-    href: "/experiments",
-    status: "Rotating slot",
-    tags: ["Wildcard", "Prototype", "Lab"],
-    anchorId: "random-experiment",
-  },
-];
-
 export const featuredShowcase: FeaturedShowcaseItem[] = [
   {
     title: "Missile Strike",
@@ -280,15 +252,6 @@ export const featuredShowcase: FeaturedShowcaseItem[] = [
     thumbnailSrc: heightmapGeneratorThumbnailSrc,
     thumbnailAlt: heightmapGeneratorThumbnailAlt,
     thumbnailFit: "contain",
-  },
-  {
-    title: "Random Experiment",
-    description:
-      "The catch-all slot for the ideas that do not fit a lane yet, from rendering tests to tiny interactive jokes.",
-    href: "/experiments#random-experiment",
-    status: "Rotating concept",
-    ctaLabel: "Open Random Experiment",
-    eyebrow: "Featured experiment",
   },
 ];
 
@@ -315,14 +278,6 @@ export const latestUpdates: LatestUpdateItem[] = [
     thumbnailAlt: heightmapGeneratorThumbnailAlt,
     thumbnailFit: "contain",
   },
-  {
-    title: "Experiments stay loose on purpose",
-    description:
-      "That section is where rendering tests, UI ideas, and the weirder one-off builds land first.",
-    href: "/experiments",
-    section: "Experiments",
-    timeLabel: "Still messy",
-  },
 ];
 
 export const surpriseDestinations = [
@@ -330,7 +285,6 @@ export const surpriseDestinations = [
   "/games/missile-strike",
   "/games/bubble-bash",
   "/tools",
-  "/experiments",
   "/support",
   "/about",
   "/useful-tools",
