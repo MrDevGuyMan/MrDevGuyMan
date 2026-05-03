@@ -114,7 +114,11 @@ export default function GamesPage() {
       </section>
 
       <section className="section-divider space-y-8">
-        <SectionHeading eyebrow="Browse games" />
+        <SectionHeading
+          eyebrow="Browse games"
+          title="Games"
+          description="Play my latest browser games and browser-friendly experiments."
+        />
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {gameCatalog.map((item) => (
             <GameBrowseCard key={item.title} item={item} />
