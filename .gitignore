@@ -1,5 +1,6 @@
 # Dependencies
 node_modules/
+node_modules
 .pnp
 .pnp.js
 
@@ -8,6 +9,7 @@ coverage/
 
 # Next.js
 .next/
+.next
 out/
 
 # Production
@@ -26,6 +28,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Local env files
+.env.local
 .env*
 
 # Vercel
@@ -33,3 +36,7 @@ yarn-error.log*
 
 # TypeScript
 *.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# Local tooling
+.codex-tmp
