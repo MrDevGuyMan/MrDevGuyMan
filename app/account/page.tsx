@@ -9,6 +9,7 @@ import { auth } from "@/lib/auth/session";
 import { getDb } from "@/lib/db";
 import { games, scoreSubmissions, users } from "@/lib/db/schema";
 import { ensureGamesSeeded } from "@/lib/game-registry";
+import { ScoreMetadataDisplay } from "@/lib/score-metadata";
 
 export const dynamic = "force-dynamic";
 
@@ -132,7 +133,9 @@ export default async function AccountPage() {
                         <tr key={row.scoreId} className="border-t border-[rgba(255,255,255,0.06)]">
                           <td className="px-3 py-3 font-semibold text-foreground">{row.score.toLocaleString()}</td>
                           <td className="px-3 py-3 text-muted">{formatDate(row.createdAt)}</td>
-                          <td className="px-3 py-3 text-muted">{row.metadata ? JSON.stringify(row.metadata) : "-"}</td>
+                          <td className="px-3 py-3 text-muted">
+                            <ScoreMetadataDisplay gameSlug={gameSlug} metadata={row.metadata ?? undefined} />
+                          </td>
                         </tr>
                       ))}
                     </tbody>
