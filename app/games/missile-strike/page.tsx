@@ -21,6 +21,9 @@ export default function MissileStrikePage() {
           <a href={gamePath} target="_blank" className="btn-primary">
             Launch in new tab
           </a>
+          <Link href="/leaderboards/missile-strike" className="btn-secondary">
+            Leaderboard
+          </Link>
           <Link href="/games" className="btn-secondary">
             Back to games
           </Link>
@@ -32,7 +35,7 @@ export default function MissileStrikePage() {
           <div>
             <p className="eyebrow-label text-[11px]">Game preview</p>
             <p className="mt-2 text-sm leading-7 text-muted">
-              Use the launch button above to open the playable build.
+              Use the launch button above to open the playable build. The web export now includes a score-submission bridge for signed-in saves, and the Godot game code can call it once the game-over callback is surfaced.
             </p>
           </div>
           <span className="surface-tag rounded-full px-3 py-1 text-xs">Browser / Godot</span>

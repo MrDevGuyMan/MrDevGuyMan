@@ -21,6 +21,9 @@ export default function WarOfRealmsPage() {
           <a href={gamePath} target="_blank" className="btn-primary">
             Launch in new tab
           </a>
+          <Link href="/leaderboards" className="btn-secondary">
+            Leaderboards
+          </Link>
           <Link href="/games" className="btn-secondary">
             Back to games
           </Link>

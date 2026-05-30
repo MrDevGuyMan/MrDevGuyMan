@@ -52,6 +52,11 @@ export function GameBrowseCard({ item }: GameBrowseCardProps) {
       <Link href={item.href} className="btn-secondary mt-7">
         {item.ctaLabel}
       </Link>
+      {item.supportsLeaderboard && item.gameSlug ? (
+        <Link href={`/leaderboards/${item.gameSlug}`} className="btn-link mt-4">
+          Leaderboard
+        </Link>
+      ) : null}
     </article>
   );
 }

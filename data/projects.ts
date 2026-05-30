@@ -42,6 +42,8 @@ export type GameCatalogItem = {
   tags: string[];
   ctaLabel: string;
   summary: string;
+  gameSlug?: string;
+  supportsLeaderboard?: boolean;
   thumbnailSrc?: string;
   thumbnailAlt?: string;
   thumbnailFit?: "cover" | "contain";
@@ -128,6 +130,8 @@ export const gameCatalog: GameCatalogItem[] = [
     title: "Missile Strike",
     description: missileStrikeDescription,
     href: "/games/missile-strike",
+    gameSlug: "missile-strike",
+    supportsLeaderboard: true,
     status: "Playable",
     tags: ["Godot", "Browser Game", "Arcade"],
     ctaLabel: "Play Missile Strike",
@@ -140,6 +144,7 @@ export const gameCatalog: GameCatalogItem[] = [
     title: "War of Realms",
     description: warOfRealmsDescription,
     href: "/games/war-of-realms",
+    gameSlug: "war-of-realms",
     status: "Playable",
     tags: ["Godot", "Strategy", "Web Game", "Fantasy"],
     ctaLabel: "Play War of Realms",
@@ -185,6 +190,7 @@ export const gameCatalog: GameCatalogItem[] = [
     description:
       "A compact combat prototype for quick rounds, enemy pattern tests, and upgrade ideas that might actually stick.",
     href: "/games/arena-zero",
+    gameSlug: "arena-zero",
     status: "Concept",
     tags: ["Arena", "Combat", "Prototype"],
     ctaLabel: "Open placeholder",
@@ -196,6 +202,7 @@ export const gameCatalog: GameCatalogItem[] = [
     description:
       "A run-based crawler idea mixing short loops, procedural rooms, and browser-friendly session length.",
     href: "/games/dungeon-loop",
+    gameSlug: "dungeon-loop",
     status: "Concept",
     tags: ["Dungeon", "Run-Based", "Adventure"],
     ctaLabel: "Open placeholder",

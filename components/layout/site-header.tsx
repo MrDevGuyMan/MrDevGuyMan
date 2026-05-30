@@ -1,12 +1,19 @@
 import Link from "next/link";
+import { auth } from "@/lib/auth/session";
 import { HeaderNav } from "@/components/layout/header-nav";
 import { primaryNavigation } from "@/data/navigation";
 import { siteConfig } from "@/lib/site-config";
 import { Container } from "@/components/ui/container";
 
-export function SiteHeader() {
+export async function SiteHeader() {
   const brandName = siteConfig.name.replace(/\s+/g, "");
   const compactBrandName = brandName.replace(/Hub$/, "");
+  const session = await auth();
+  const user = session?.user
+    ? {
+        displayName: session.user.displayName,
+      }
+    : null;
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-[rgba(8,7,5,0.88)] backdrop-blur-md">
@@ -57,7 +64,7 @@ export function SiteHeader() {
             </span>
           </span>
         </Link>
-        <HeaderNav items={primaryNavigation} />
+        <HeaderNav items={primaryNavigation} user={user} />
       </Container>
     </header>
   );

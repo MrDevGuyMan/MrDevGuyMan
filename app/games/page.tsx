@@ -117,8 +117,11 @@ export default function GamesPage() {
         <SectionHeading
           eyebrow="Browse games"
           title="Games"
-          description="Play my latest browser games and browser-friendly experiments."
+          description="Play my latest browser games and browser-friendly experiments. Create a free account to save scores and compete on leaderboards."
         />
+        <p className="max-w-2xl text-sm leading-7 text-muted">
+          Guest play stays frictionless. Account support only appears where score-saving is live.
+        </p>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {gameCatalog.map((item) => (
             <GameBrowseCard key={item.title} item={item} />
