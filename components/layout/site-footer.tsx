@@ -6,7 +6,7 @@ import { SurpriseMeLink } from "@/components/ui/surprise-me-link";
 export function SiteFooter() {
   return (
     <footer className="mt-28 border-t border-line bg-[linear-gradient(180deg,rgba(9,8,6,0),rgba(16,13,10,0.66))]">
-      <Container className="grid gap-12 py-16 text-sm text-muted md:grid-cols-[1.2fr_0.8fr_auto] md:items-start">
+      <Container className="grid gap-12 py-16 text-sm text-muted md:grid-cols-[1.1fr_0.8fr_0.9fr_auto] md:items-start">
         <div className="max-w-md">
           <p className="mb-4 font-semibold tracking-[-0.03em] text-gold-100">MrDevGuyMan Hub</p>
           <p className="mb-4 text-base font-medium text-[#d7ccb5]">
@@ -37,6 +37,21 @@ export function SiteFooter() {
                 </Link>
               )
             ))}
+          </div>
+        </div>
+        <div>
+          <p className="mb-4 font-semibold tracking-[-0.03em] text-gold-100">Get in Touch</p>
+          <p className="mb-4 leading-7">
+            Questions, feedback, bug reports, or business enquiries.
+          </p>
+          <div className="flex flex-col gap-3">
+            <a
+              href="mailto:contact@mrdevguyman.com"
+              className="btn-secondary w-fit !px-5 !py-2.5 !text-sm"
+            >
+              Email me
+            </a>
+            <p className="text-[#d7ccb5]">contact@mrdevguyman.com</p>
           </div>
         </div>
         <div className="md:text-right">
