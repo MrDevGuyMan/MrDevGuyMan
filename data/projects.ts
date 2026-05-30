@@ -119,6 +119,8 @@ export const gameCatalog: GameCatalogItem[] = [
     title: "BubbleBash",
     description: bubbleBashDescription,
     href: "/games/bubble-bash",
+    gameSlug: "bubble-bash",
+    supportsLeaderboard: true,
     status: "Playable",
     tags: ["Godot", "Browser Game", "Arcade", "Strategy"],
     ctaLabel: "Play BubbleBash",

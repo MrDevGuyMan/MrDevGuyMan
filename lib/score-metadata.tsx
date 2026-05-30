@@ -1,5 +1,62 @@
 export type ScoreMetadata = Record<string, string | number | boolean>;
 
+function formatOrdinal(value: number) {
+  const mod100 = value % 100;
+
+  if (mod100 >= 11 && mod100 <= 13) {
+    return `${value}th`;
+  }
+
+  switch (value % 10) {
+    case 1:
+      return `${value}st`;
+    case 2:
+      return `${value}nd`;
+    case 3:
+      return `${value}rd`;
+    default:
+      return `${value}th`;
+  }
+}
+
+function formatBubbleBashMetadata(metadata: ScoreMetadata) {
+  const rows: string[] = [];
+
+  if (typeof metadata.food === "number" && Number.isFinite(metadata.food)) {
+    rows.push(`Food: ${metadata.food}`);
+  }
+
+  if (typeof metadata.ai === "number" && Number.isFinite(metadata.ai)) {
+    rows.push(`AI: ${metadata.ai}`);
+  }
+
+  if (typeof metadata.survival === "number" && Number.isFinite(metadata.survival)) {
+    rows.push(`Survival: ${metadata.survival}`);
+  }
+
+  if (typeof metadata.combo === "number" && Number.isFinite(metadata.combo)) {
+    rows.push(`Combo: ${metadata.combo}`);
+  }
+
+  if (typeof metadata.winBonus === "number" && Number.isFinite(metadata.winBonus)) {
+    rows.push(`Win bonus: ${metadata.winBonus}`);
+  }
+
+  if (typeof metadata.arenaCleared === "number" && Number.isFinite(metadata.arenaCleared)) {
+    rows.push(`Arena cleared: ${metadata.arenaCleared}%`);
+  }
+
+  if (typeof metadata.finalSize === "number" && Number.isFinite(metadata.finalSize)) {
+    rows.push(`Final size: ${metadata.finalSize.toFixed(2)}`);
+  }
+
+  if (typeof metadata.rank === "number" && Number.isFinite(metadata.rank)) {
+    rows.push(`Rank: ${formatOrdinal(metadata.rank)}`);
+  }
+
+  return rows;
+}
+
 function formatMissileStrikeMetadata(metadata: ScoreMetadata) {
   const rows: string[] = [];
 
@@ -39,7 +96,9 @@ export function getFormattedScoreMetadata(gameSlug: string, metadata: ScoreMetad
 
   return gameSlug === "missile-strike"
     ? formatMissileStrikeMetadata(metadata)
-    : formatUnknownMetadata(metadata);
+    : gameSlug === "bubble-bash"
+      ? formatBubbleBashMetadata(metadata)
+      : formatUnknownMetadata(metadata);
 }
 
 export function ScoreMetadataDisplay({

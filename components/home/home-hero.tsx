@@ -5,9 +5,11 @@ import { SurpriseMeLink } from "@/components/ui/surprise-me-link";
 
 type HomeHeroProps = {
   items: FeaturedShowcaseItem[];
+  accountHref: "/login" | "/account";
+  accountLabel: string;
 };
 
-export function HomeHero({ items }: HomeHeroProps) {
+export function HomeHero({ items, accountHref, accountLabel }: HomeHeroProps) {
   const spotlight = items[0];
 
   if (!spotlight) return null;
@@ -35,6 +37,27 @@ export function HomeHero({ items }: HomeHeroProps) {
             <SurpriseMeLink className="cta-secondary border-line bg-transparent text-ink-50 hover:border-gold-300 hover:bg-[#17130d]">
               Surprise me
             </SurpriseMeLink>
+          </div>
+          <div className="mt-6 max-w-2xl rounded-[1.25rem] border border-line bg-[rgba(18,14,10,0.38)] px-4 py-4 md:px-5">
+            <p className="text-sm leading-7 text-ink-200">
+              Save scores, track progress, and compete with other players on the leaderboards.
+            </p>
+            <div className="mt-3 flex flex-wrap gap-3">
+              <Link
+                href="/leaderboards"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-gold-300 transition-opacity hover:opacity-75"
+              >
+                <span>View Leaderboards</span>
+                <span>&rarr;</span>
+              </Link>
+              <Link
+                href={accountHref}
+                className="inline-flex items-center gap-2 text-sm font-semibold text-ink-50 transition-opacity hover:opacity-75"
+              >
+                <span>{accountLabel}</span>
+                <span>&rarr;</span>
+              </Link>
+            </div>
           </div>
         </div>
 

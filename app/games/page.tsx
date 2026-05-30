@@ -7,11 +7,13 @@ import { PageHero } from "@/components/ui/page-hero";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { SurpriseMeLink } from "@/components/ui/surprise-me-link";
 import { gameCatalog } from "@/data/projects";
+import { auth } from "@/lib/auth/session";
 
 const warOfRealmsFeaturedDescription =
   "Made in the Godot engine War of Realms is a fantasy grand-strategy conquest game you can play right here in your browser.";
 
-export default function GamesPage() {
+export default async function GamesPage() {
+  const session = await auth();
   const featuredGame =
     gameCatalog.find((game) => game.title === "War of Realms") ?? gameCatalog[0];
 
@@ -36,6 +38,19 @@ export default function GamesPage() {
           <span className="surface-tag rounded-full px-3 py-1.5 text-[11px] uppercase tracking-[0.18em]">
             Future game routes live
           </span>
+        </div>
+        <div className="section-shell mt-5 w-full max-w-2xl rounded-[1.5rem] p-5">
+          <p className="text-sm leading-7 text-muted">
+            Click to see all leaderboards and compare scores across games.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Link href="/leaderboards" className="btn-primary">
+              View leaderboards
+            </Link>
+            <Link href={session?.user ? "/account" : "/login"} className="btn-secondary">
+              {session?.user ? "My account" : "Login to join the board"}
+            </Link>
+          </div>
         </div>
       </PageHero>
 

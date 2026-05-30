@@ -8,6 +8,13 @@ export type RegisteredGame = {
 
 export const registeredGames: RegisteredGame[] = [
   {
+    slug: "bubble-bash",
+    name: "Bubble Bash",
+    href: "/games/bubble-bash",
+    supportsScoreSubmissions: true,
+    supportsPublicLeaderboard: true,
+  },
+  {
     slug: "missile-strike",
     name: "Missile Strike",
     href: "/games/missile-strike",

@@ -16,11 +16,11 @@ export async function SiteHeader() {
     : null;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-[rgba(8,7,5,0.88)] backdrop-blur-md">
-      <Container className="flex h-[4.5rem] items-center justify-between gap-3">
+    <header className="sticky top-0 z-[120] isolate border-b border-line bg-[rgba(8,7,5,0.88)] backdrop-blur-md">
+      <Container className="relative z-[1] flex h-[4.5rem] items-center justify-between gap-3">
         <Link
           href="/"
-          className="flex min-w-0 flex-1 items-center gap-3 text-ink-50 transition hover:opacity-80 md:flex-none"
+          className="relative z-[2] flex min-w-0 flex-1 items-center gap-3 text-ink-50 transition hover:opacity-80 md:flex-none"
         >
           <span className="flex min-w-0 items-center gap-3">
             <svg

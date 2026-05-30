@@ -3,6 +3,7 @@ import { HomeHero } from "@/components/home/home-hero";
 import { LatestUpdates } from "@/components/home/latest-updates";
 import { SectionPreview } from "@/components/home/section-preview";
 import { Container } from "@/components/ui/container";
+import { auth } from "@/lib/auth/session";
 import {
   featuredShowcase,
   games,
@@ -10,12 +11,18 @@ import {
   tools,
 } from "@/data/projects";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const session = await auth();
+
   return (
     <>
       <section className="bg-variant-hero">
         <Container className="pb-8 pt-4 md:pb-10 md:pt-6">
-          <HomeHero items={featuredShowcase} />
+          <HomeHero
+            items={featuredShowcase}
+            accountHref={session?.user ? "/account" : "/login"}
+            accountLabel={session?.user ? "My Account" : "Login to join the board"}
+          />
           <FeaturedGrid items={featuredShowcase} />
         </Container>
       </section>

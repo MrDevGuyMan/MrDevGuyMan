@@ -76,7 +76,7 @@ export function HeaderNav({ items, user }: HeaderNavProps) {
         : pathname === item.href || pathname.startsWith(`${item.href}/`);
     const className =
       mode === "desktop"
-        ? `whitespace-nowrap text-[0.86rem] font-medium tracking-[-0.01em] transition-colors lg:text-[0.92rem] ${
+        ? `inline-flex items-center rounded-full px-2 py-2 whitespace-nowrap text-[0.86rem] font-medium tracking-[-0.01em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-300/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#080705] lg:text-[0.92rem] ${
             isActive ? "text-gold-100" : "text-ink-400 hover:text-gold-300"
           }`
         : `rounded-xl border px-4 py-3 text-sm font-medium tracking-[-0.01em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-300/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#080705] ${
@@ -102,7 +102,7 @@ export function HeaderNav({ items, user }: HeaderNavProps) {
   };
 
   return (
-    <nav ref={navRef} aria-label="Primary navigation" className="relative flex shrink-0 items-center">
+    <nav ref={navRef} aria-label="Primary navigation" className="relative z-[2] flex shrink-0 items-center pointer-events-auto">
       <div className="hidden items-center gap-4 md:flex xl:gap-6">
         {items.map((item) => renderNavItem(item, "desktop"))}
         <AccountNav user={user} />
@@ -130,7 +130,7 @@ export function HeaderNav({ items, user }: HeaderNavProps) {
       {isMenuOpen ? (
         <div
           id={menuId}
-          className="absolute right-0 top-full mt-3 flex w-[min(18rem,calc(100vw-2.5rem))] flex-col gap-1 rounded-2xl border border-[rgba(212,175,55,0.24)] bg-[rgba(8,7,5,0.98)] p-2 shadow-[0_18px_48px_rgba(0,0,0,0.42)] md:hidden"
+          className="absolute right-0 top-full z-[3] mt-3 flex w-[min(18rem,calc(100vw-2.5rem))] flex-col gap-1 rounded-2xl border border-[rgba(212,175,55,0.24)] bg-[rgba(8,7,5,0.98)] p-2 shadow-[0_18px_48px_rgba(0,0,0,0.42)] md:hidden"
         >
           <Link
             href={user ? "/account" : "/login"}

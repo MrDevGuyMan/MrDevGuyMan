@@ -21,6 +21,9 @@ export default function BubbleBashPage() {
           <a href={gamePath} target="_blank" className="btn-primary">
             Launch in new tab
           </a>
+          <Link href="/leaderboards/bubble-bash" className="btn-secondary">
+            Leaderboard
+          </Link>
           <Link href="/games" className="btn-secondary">
             Back to games
           </Link>
